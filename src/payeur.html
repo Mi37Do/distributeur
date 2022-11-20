@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="w-full h-screen bg-slate-200 p-4 flex flex-col-reverse lg:flex-row gap-4 relative">
+
+    <!--nav bar-->
+  <nav class="w-full h-20 lg:w-20 lg:h-full bg-white sticky z-10 bottom-0 flex-none rounded-xl p-4">
+    <div class="w-full h-full flex flex-col gap-8">
+
+
+      <div class="w-full h-full flex flex-col items-center justify-center gap-4">
+        <a href="index.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 tooltip tooltip-right" data-tip="dashboard">
+            <i class="uil uil-apps text-slate-300 text-xl"></i>
+        </a>
+        <a href="créance.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="créances">
+            <i class="uil uil-money-stack text-primary text-xl"></i>
+        </a>
+        <a href="factures.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="factures">
+            <i class="uil uil-folder text-slate-300 text-xl"></i>
+        </a>
+        <a href="bonDeCommandes.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="commandes">
+            <i class="uil uil-file-alt text-slate-300 text-xl"></i>
+        </a>
+    </div>
+        <div class="w-full hidden lg:flex flex-col gap-4">
+            
+            <!--begin notifications-->
+            <div class="dropdown dropdown-right dropdown-end">
+                <label tabindex="0" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1 relative">
+                    <div class="badge badge-xs bg-red-400 absolute right-2 top-2 border-white"></div>
+                    <i class="uil uil-bell text-primary text-xl"></i>
+                </label>
+                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 ml-2">
+                  <li><a>Item 1</a></li>
+                  <li><a>Item 2</a></li>
+                </ul>
+              </div>
+            <!--end notifications-->
+            <!--begin user info -->
+            <div class="dropdown dropdown-right dropdown-end">
+                <label tabindex="0" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
+                    <i class="uil uil-user text-primary text-xl"></i>
+                </label>
+                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 ml-2">
+                  <li><a>Item 1</a></li>
+                  <li><a>Item 2</a></li>
+                </ul>
+              </div>
+              <!--end user info-->
+
+            
+              <label for="my-modal" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
+                <i class="uil uil-signout text-primary text-xl"></i>
+            </label>
+        </div>
+    </div>
+  </nav>
+
+  <!--main-->
+  <div class="w-full h-full overflow-auto gap-4">
+    <div class="w-full h-full flex flex-col gap-4">
+        <div class="w-full h-full bg-white rounded-xl flex flex-col gap-4 p-4">
+    
+            <div class="w-full flex justify-between items-center">
+              <nav class="flex" aria-label="Breadcrumb">
+                <ol role="list" class="flex items-center space-x-4">
+                  <li>
+                    <div>
+                      <a href="index.html" class="text-gray-400 hover:text-gray-500">
+                        <!-- Heroicon name: solid/home -->
+                        <svg class="flex-shrink-0 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        <span class="sr-only">Home</span>
+                      </a>
+                    </div>
+                  </li>
+              
+                  <li>
+                    <div class="flex items-center">
+                      <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                      </svg>
+                      <a href="créance.html" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Créances</a>
+                    </div>
+                  </li>
+                  <li>
+                      <div class="flex items-center">
+                        <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                          <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                        </svg>
+                        <a href="payeur.html" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Djilali attou</a>
+                      </div>
+                    </li>
+                </ol>
+              </nav>
+    
+                        <!-- This example requires Tailwind CSS v2.0+ -->
+                        <div class="dropdown dropdown-end">
+                          <label tabindex="0" class="btn capitalize bg-white px-4 py-2 border border-slate-300 text-gray-400 text-sm hover:bg-slate-50 hover:border-slate-400  m-1">filtres</label>
+                          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-lg w-52 text-xs text-gray-500">
+                            <li><a>Créances globale</a></li>
+                            <li><a>Créances échues</a></li>
+                          </ul>
+                        </div>
+              
+            </div>
+            <div class="grow overflow-x-hidden relative flex flex-col overflow-auto">
+              <div class="flex-none">
+                <div class="w-full h-10 sticky inset-0 grid grid-cols-1 lg:grid-cols-4 rounded-t-md bg-gray-200 text-gray-500 text-xs font-medium px-4">
+                  <div class="h-full flex items-center">
+                    <span>N°Facture</span>
+                  </div>
+                  <div class="h-full hidden lg:flex items-center">
+                    <span>Montant</span>
+                  </div>
+                  <div class="h-full hidden lg:flex items-center">
+                    <span>reste</span>
+                  </div>
+                  <div class="h-full hidden lg:flex items-center">
+                    <span>Date d'echéance</span>
+                  </div>
+                </div>
+              </div>
+                
+              
+                <div class="w-full grow overflow-auto rounded-b-md bg-gray-50">
+                  <div class="w-full h-full flex flex-col gap-2 p-2">
+                    <!--table item-->
+                    <div class="w-full py-3 bg-white rounded-md flex-none">
+                      <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-4 text-xs text-gray-500 px-2">
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                          <span class="lg:hidden">N° facture</span>
+                          <span class="font-medium">f001</span>
+                        </div>
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                          <span class="lg:hidden">créances globale</span>
+                          <span>20 000 000.00 dzd</span>
+                        </div>
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">reste</span>
+                            <span>10 000 000.00 dzd</span>
+                          </div>
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                          <span class="lg:hidden">date d'echéance</span>
+                          <span>18-12-2023</span>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <!--table item end-->
+                    
+                  </div>
+                </div>
+                
+                
+                
+              </div>
+
+              <div class="w-fit py-3 bg-white border border-slate-300 hidden lg:flex items-center justify-center gap-4 text-gray-400 rounded-lg px-6">
+                <span>total : <span class="font-semibold">100 000 000.00 <span class="uppercase text-xs">dzd</span></span> 
+                </span>
+
+                <span>|</span>
+
+                <span>reste : <span class="font-semibold">100 000 000.00 <span class="uppercase text-xs">dzd</span></span> 
+                </span>
+              </div>
+        </div>
+
+      </div>
+    </div>
+
+
+      <!--sign out modal-->
+  <input type="checkbox" id="my-modal" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box">
+      <p class="py-4">Voulez-vous vraiment se déconnecter !</p>
+      <div class="modal-action">
+        <label for="my-modal" class="btn text-white">rester</label>
+        <label for="my-modal" class="btn bg-white border-none hover:bg-slate-200 text-primary">déconnecter</label>
+      </div>
+    </div>
+  </div>
+  <!--end sign out modal-->
+</body>
+</html>

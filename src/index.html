@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="w-full h-screen bg-slate-200 p-4 flex flex-col-reverse lg:flex-row gap-4 relative">
+
+    <!--nav bar-->
+  <nav class="w-full h-20 lg:w-20 lg:h-full bg-white sticky bottom-0 flex-none rounded-xl p-4">
+    <div class="w-full h-full flex flex-col gap-8">
+
+
+        <div class="w-full h-full flex flex-col items-center justify-center gap-4">
+            <a href="index.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 tooltip tooltip-right" data-tip="dashboard">
+                <i class="uil uil-apps text-primary text-xl"></i>
+            </a>
+            <a href="créance.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="créances">
+                <i class="uil uil-money-stack text-slate-300 text-xl"></i>
+            </a>
+            <a href="factures.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="factures">
+                <i class="uil uil-folder text-slate-300 text-xl"></i>
+            </a>
+            <a href="bonDeCommandes.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="commandes">
+                <i class="uil uil-file-alt text-slate-300 text-xl"></i>
+            </a>
+        </div>
+        <div class="w-full hidden lg:flex flex-col gap-4">
+                                
+          <!--begin notifications-->
+          <div class="dropdown dropdown-right dropdown-end">
+              <label tabindex="0" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1 relative">
+                  <div class="badge badge-xs bg-red-400 absolute right-2 top-2 border-white"></div>
+                  <i class="uil uil-bell text-primary text-xl"></i>
+              </label>
+              <div tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-64 h-96 ml-2 overflow-auto">
+                  <li><div class="w-full flex justify-between">
+                      <div class="w-full flex flex-col gap-1">
+                          <span class="capitalize text-xs">facture</span>
+                          <span class="capitalize text-sm font-medium">f0148</span>
+                      </div> 
+                      
+                      <span class="w-3 h-3 rounded-full bg-red-400 flex-none"></span></div></li>
+
+
+              <li><div class="w-full flex justify-between">
+                      <div class="w-full flex flex-col gap-1">
+                          <span class="capitalize text-xs">bon de commande</span>
+                          <span class="capitalize text-sm font-medium">BC22458</span>
+                      </div> 
+                      
+                      <span class="w-3 h-3 rounded-full bg-green-300 flex-none"></span></div></li>
+              </div>
+          </div>
+          <!--end notifications-->
+          <!--begin user info -->
+          <div class="dropdown dropdown-right dropdown-end">
+              <label tabindex="0" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
+                  <i class="uil uil-user text-primary text-xl"></i>
+              </label>
+              <div tabindex="0" class="dropdown-content p-4 shadow bg-base-100 rounded-box w-64 ml-2 flex flex-col gap-3 text-gray-500">
+              <div class="w-full flex flex-col gap-1">
+                  <span class="text-xs capitalize">Distributeur</span>
+                  <span class="text-sm font-medium capitalize">ben kada fouad</span>
+              </div>
+              <div class="w-full flex flex-col gap-1">
+                  <span class="text-xs capitalize">région</span>
+                  <span class="text-sm font-medium capitalize">est</span>
+              </div>
+              <div class="w-full flex flex-col gap-1">
+                  <span class="text-xs capitalize">ville</span>
+                  <span class="text-sm font-medium capitalize">constantine</span>
+              </div>
+              </div>
+          </div>
+          <!--end user info-->
+
+          
+          <label for="my-modal" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
+              <i class="uil uil-signout text-primary text-xl"></i>
+          </label>
+      </div>
+    </div>
+  </nav>
+
+  <!--main-->
+  <div class="w-full h-full overflow-auto grid grid-cols-4 grid-rows-3 gap-4">
+
+    <!--begin ventes dashboard-->
+    <div class="w-full h-full col-span-2 row-span-2 flex flex-col gap-2">
+      <span class="text-sm font-medium capitalize text-gray-500">ventes</span>
+      <div class="w-full h-full bg-white rounded-xl p-6">
+        <div class="w-full h-full grid grid-rows-3 gap-3">
+          <div class="w-full h-full row-span-1 grid grid-cols-7 gap-10">
+            <div class="flex flex-col gap-1">
+              <span class="text-sm font-medium text-gray-400 capitalize">evolution</span>
+              <span class="text-3xl font-bold text-green-500">32%</span>
+            </div>
+
+            <div class="flex flex-col col-span-3 gap-1">
+              <div class="w-full flex justify-between">
+                <span class="text-sm font-medium text-gray-400 capitalize">vente annuel</span>
+                <a href="#" class="w-6 h-6 rounded-lg bg-slate-200 p-1 flex items-center justify-center">
+                  <i class="uil uil-arrow-up-right"></i>
+                </a>
+              </div>
+              <span class="text-2xl font-bold text-primary">100 000 00.00 <span class="uppercase text-sm">dzd</span></span>
+            </div>
+
+            <div class="flex flex-col col-span-3 gap-1">
+              <div class="w-full flex justify-between">
+                <span class="text-sm font-medium text-gray-400 capitalize">mois en cours</span>
+                <a href="#" class="w-6 h-6 rounded-lg bg-slate-200 p-1 flex items-center justify-center">
+                  <i class="uil uil-arrow-up-right"></i>
+                </a>
+              </div>
+              <span class="text-2xl font-bold text-blue-500">100 000 00.00 <span class="uppercase text-sm">dzd</span></span>
+            </div>
+          </div>
+
+          <div class="w-full h-full row-span-2">
+            <canvas id="myChart1" class="hidden" height="100"></canvas>
+          </div>
+        </div>
+      </div>
+  </div>
+    <!--end ventes dashboard-->
+
+    <!--begin creances dashboard-->
+    <div class="w-full h-full col-span-2 row-span-2 flex flex-col gap-2">
+        <span class="text-sm font-medium capitalize text-gray-500">créances</span>
+        <div class="w-full h-full bg-white rounded-xl p-6">
+          <div class="w-full h-full grid grid-rows-3 gap-3">
+            <div class="w-full h-full row-span-1 grid grid-cols-7 gap-10">
+              <div class="flex flex-col gap-1">
+                <span class="text-sm font-medium text-gray-400 capitalize">evolution</span>
+                <span class="text-3xl font-bold text-red-400">-20%</span>
+              </div>
+
+              <div class="flex flex-col col-span-3 gap-1">
+                <div class="w-full flex justify-between">
+                  <span class="text-sm font-medium text-gray-400 capitalize">créances globale</span>
+                  <a href="#" class="w-6 h-6 rounded-lg bg-slate-200 p-1 flex items-center justify-center">
+                    <i class="uil uil-arrow-up-right"></i>
+                  </a>
+                </div>
+                <span class="text-2xl font-bold text-primary">100 000 00.00 <span class="uppercase text-sm">dzd</span></span>
+              </div>
+
+              <div class="flex flex-col col-span-3 gap-1">
+                <div class="w-full flex justify-between">
+                  <span class="text-sm font-medium text-gray-400 capitalize">créances globale</span>
+                  <a href="#" class="w-6 h-6 rounded-lg bg-slate-200 p-1 flex items-center justify-center">
+                    <i class="uil uil-arrow-up-right"></i>
+                  </a>
+                </div>
+                <span class="text-2xl font-bold text-blue-500">100 000 00.00 <span class="uppercase text-sm">dzd</span></span>
+              </div>
+            </div>
+
+            <div class="w-full h-full row-span-2">
+              <canvas id="myChart" class="hidden" height="100"></canvas>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!--end creances dashboard-->
+
+    <!--begin plafonement dashboard-->
+    <div class="w-full h-full col-span-2 row-span-1 flex flex-col gap-2">
+        <span class="text-sm font-medium capitalize text-gray-500">plafonnement</span>
+        <div class="w-full h-full bg-white rounded-xl p-6">
+          <div class="w-full h-full grid grid-cols-3">
+            <div class="h-full col-span-1 flex items-center justify-center">
+              <div class="radial-progress text-primary" style="--value:70;">70%</div>
+            </div>
+            <div class="w-full h-full col-span-2 flex flex-col justify-between">
+              <div class="flex flex-col justify-between">
+              <div class="w-full h-full row-span-2">
+                <div class="flex flex-col gap-1">
+                  <div class="w-full flex justify-between">
+                    <span class="text-sm font-medium text-gray-400 capitalize">plafonnement total</span>
+                    <a href="#" class="w-6 h-6 rounded-lg bg-slate-200 p-1 flex items-center justify-center">
+                      <i class="uil uil-arrow-up-right"></i>
+                    </a>
+                  </div>
+                  <span class="text-2xl font-bold text-primary">100 000 00.00 <span class="uppercase text-sm">dzd</span></span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col justify-between">
+              <div class="w-full h-full row-span-2">
+                <div class="flex flex-col gap-1">
+                  <div class="w-full flex justify-between">
+                    <span class="text-sm font-medium text-gray-400 capitalize">en cours</span>
+                    <a href="#" class="w-6 h-6 rounded-lg bg-slate-200 p-1 flex items-center justify-center">
+                      <i class="uil uil-arrow-up-right"></i>
+                    </a>
+                  </div>
+                  <span class="text-2xl font-bold text-blue-500">20 000 00.00 <span class="uppercase text-sm">dzd</span></span>
+                </div>
+              </div>
+            </div>
+            </div>
+            
+            
+          </div>
+        </div>
+    </div>
+    <!--end plafonement dashboard-->
+
+    <!--begin commandes dashboard-->
+    <div class="w-full h-full col-span-1 row-span-1 flex flex-col gap-2">
+        <span class="text-sm font-medium capitalize text-gray-500">commandes</span>
+        <div class="w-full h-full bg-white rounded-xl p-6">
+          <div class="w-full h-full flex flex-col justify-between">
+            <div class="flex flex-col justify-between">
+            <div class="w-full h-full row-span-2">
+              <div class="flex flex-col gap-1">
+                <div class="w-full flex justify-between">
+                  <span class="text-sm font-medium text-gray-400 capitalize">en attente de validation</span>
+                  <a href="#" class="w-6 h-6 rounded-lg bg-slate-200 p-1 flex items-center justify-center">
+                    <i class="uil uil-arrow-up-right"></i>
+                  </a>
+                </div>
+                <span class="text-2xl font-bold text-primary">40</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between">
+            <div class="w-full h-full row-span-2">
+              <div class="flex flex-col gap-1">
+                <div class="w-full flex justify-between">
+                  <span class="text-sm font-medium text-gray-400 capitalize">en cours de livraison</span>
+                  <a href="#" class="w-6 h-6 rounded-lg bg-slate-200 p-1 flex items-center justify-center">
+                    <i class="uil uil-arrow-up-right"></i>
+                  </a>
+                </div>
+                <span class="text-2xl font-bold text-blue-500">12</span>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+    </div>
+    <!--end commandes dashboard-->
+
+    <!--begin produits dashboard-->
+    <div class="w-full h-full col-span-1 row-span-1 flex flex-col gap-2">
+        <span class="text-sm font-medium capitalize text-gray-500">les produits les plus commandés</span>
+        <div class="w-full h-full bg-white rounded-xl"></div>
+    </div>
+    <!--end produits dashboard-->
+  </div>
+
+
+
+
+
+  <!--sign out modal-->
+  <input type="checkbox" id="my-modal" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box">
+      <p class="py-4">Voulez-vous vraiment se déconnecter !</p>
+      <div class="modal-action">
+        <label for="my-modal" class="btn text-white">rester</label>
+        <label for="my-modal" class="btn bg-white border-none hover:bg-slate-200 text-primary">déconnecter</label>
+      </div>
+    </div>
+  </div>
+  <!--end sign out modal-->
+
+
+  <script>
+    var xValues = [50,60,70,80,90,100,110,120,130,140,150,160,170];
+    var yValues = [7,8,8,9,9,9,10,11,14,14,15,6,14];
+    var yValues1 = [10,11,6,14,12,7,9,8,6,12,11,16,12];
+    
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: false,
+          lineTension: 0,
+          backgroundColor: "rgb(9, 100, 171,1)",
+          borderColor: "rgb(9, 100, 171, 0.1)",
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        scales: {
+          yAxes: [{ticks: {min: 6, max:16}}],
+        }
+      }
+    });
+
+    new Chart("myChart1", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: false,
+          lineTension: 0,
+          backgroundColor: "rgb(9, 100, 171,1)",
+          borderColor: "rgb(9, 100, 171, 0.1)",
+          data: yValues1
+        }]
+      },
+      options: {
+        legend: {display: false},
+        scales: {
+          yAxes: [{ticks: {min: 6, max:16}}],
+        }
+      }
+    });
+
+
+// write text plugin
+Chart.pluginService.register({
+afterUpdate: function (chart) {
+  if (chart.config.options.elements.center) {
+    var helpers = Chart.helpers;
+    var centerConfig = chart.config.options.elements.center;
+    var globalConfig = Chart.defaults.global;
+    var ctx = chart.chart.ctx;
+
+    var fontStyle = helpers.getValueOrDefault(centerConfig.fontStyle, globalConfig.defaultFontStyle);
+    var fontFamily = helpers.getValueOrDefault(centerConfig.fontFamily, globalConfig.defaultFontFamily);
+
+    if (centerConfig.fontSize)
+      var fontSize = centerConfig.fontSize;
+      // figure out the best font size, if one is not specified
+    else {
+      ctx.save();
+      var fontSize = helpers.getValueOrDefault(centerConfig.minFontSize, 1);
+      var maxFontSize = helpers.getValueOrDefault(centerConfig.maxFontSize, 256);
+      var maxText = helpers.getValueOrDefault(centerConfig.maxText, centerConfig.text);
+
+      do {
+        ctx.font = helpers.fontString(fontSize, fontStyle, fontFamily);
+        var textWidth = ctx.measureText(maxText).width;
+
+        // check if it fits, is within configured limits and that we are not simply toggling back and forth
+        if (textWidth < chart.innerRadius * 2 && fontSize < maxFontSize)
+          fontSize += 1;
+        else {
+          // reverse last step
+          fontSize -= 1;
+          break;
+        }
+      } while (true)
+      ctx.restore();
+    }
+
+    // save properties
+    chart.center = {
+      font: helpers.fontString(fontSize, fontStyle, fontFamily),
+      fillStyle: helpers.getValueOrDefault(centerConfig.fontColor, globalConfig.defaultFontColor)
+    };
+  }
+},
+afterDraw: function (chart) {
+  if (chart.center) {
+    var centerConfig = chart.config.options.elements.center;
+    var ctx = chart.chart.ctx;
+
+    ctx.save();
+    ctx.font = chart.center.font;
+    ctx.fillStyle = chart.center.fillStyle;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    var centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
+    var centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
+    ctx.fillText(centerConfig.text, centerX, centerY);
+    ctx.restore();
+  }
+},
+})
+
+
+var config = {
+type: 'doughnut',
+data: {
+  datasets: [{
+    data: [80,20],
+    backgroundColor: [
+      "#2563eb",
+      "#ccc"
+    ],
+    hoverBackgroundColor: [
+      "#1d4ed8",
+      "#ccc"
+    ]
+  }]
+},
+options: {
+  elements: {
+    arc: {
+      roundedCornersFor: 0
+    },
+    center: {
+      // the longest text that could appear in the center
+      maxText: '100%',
+      text: '80%',
+      fontColor: '#2563eb',
+      fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+      fontStyle: 'normal',
+                fontWeight:600,
+      // fontSize: 12,
+      // if a fontSize is NOT specified, we will scale (within the below limits) maxText to take up the maximum space in the center
+      // if these are not specified either, we default to 1 and 256
+      minFontSize: 1,
+      maxFontSize: 256,
+    }
+  }
+}
+};
+
+
+var ctx = document.getElementById("myDoughnut").getContext("2d");
+var myChart = new Chart(ctx, config);
+  </script>
+</body>
+</html>

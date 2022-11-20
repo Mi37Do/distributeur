@@ -1,0 +1,457 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-slate-200">
+    <div class="drawer">
+        <input id="add-bc-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content">
+
+
+            <div class="w-full h-screen  p-4 flex flex-col-reverse lg:flex-row gap-4 relative">
+                    <!--nav bar-->
+    <nav class="w-full h-20 lg:w-20 lg:h-full bg-white sticky bottom-0 flex-none rounded-xl p-4 z-10">
+        <div class="w-full h-full flex flex-col gap-8">
+
+
+            <div class="w-full h-full flex flex-col items-center justify-center gap-4">
+                <a href="index.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 tooltip tooltip-right" data-tip="dashboard">
+                    <i class="uil uil-apps text-slate-300 text-xl"></i>
+                </a>
+                <a href="créance.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="créances">
+                    <i class="uil uil-money-stack text-slate-300 text-xl"></i>
+                </a>
+                <a href="factures.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="factures">
+                    <i class="uil uil-folder text-slate-300 text-xl"></i>
+                </a>
+                <a href="bonDeCommandes.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="commandes">
+                    <i class="uil uil-file-alt text-primary text-xl"></i>
+                </a>
+            </div>
+            <div class="w-full hidden lg:flex flex-col gap-4">
+                
+                <!--begin notifications-->
+                <div class="dropdown dropdown-right dropdown-end">
+                    <label tabindex="0" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1 relative">
+                        <div class="badge badge-xs bg-red-400 absolute right-2 top-2 border-white"></div>
+                        <i class="uil uil-bell text-primary text-xl"></i>
+                    </label>
+                    <div tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-64 h-96 ml-2 overflow-auto">
+                        <li><div class="w-full flex justify-between">
+                            <div class="w-full flex flex-col gap-1">
+                                <span class="capitalize text-xs">facture</span>
+                                <span class="capitalize text-sm font-medium">f0148</span>
+                            </div> 
+                            
+                            <span class="w-3 h-3 rounded-full bg-red-400 flex-none"></span></div></li>
+
+
+                    <li><div class="w-full flex justify-between">
+                            <div class="w-full flex flex-col gap-1">
+                                <span class="capitalize text-xs">bon de commande</span>
+                                <span class="capitalize text-sm font-medium">BC22458</span>
+                            </div> 
+                            
+                            <span class="w-3 h-3 rounded-full bg-green-300 flex-none"></span></div></li>
+                    </div>
+                </div>
+                <!--end notifications-->
+                <!--begin user info -->
+                <div class="dropdown dropdown-right dropdown-end">
+                    <label tabindex="0" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
+                        <i class="uil uil-user text-primary text-xl"></i>
+                    </label>
+                    <div tabindex="0" class="dropdown-content p-4 shadow bg-base-100 rounded-box w-64 ml-2 flex flex-col gap-3 text-gray-500">
+                    <div class="w-full flex flex-col gap-1">
+                        <span class="text-xs capitalize">Distributeur</span>
+                        <span class="text-sm font-medium capitalize">ben kada fouad</span>
+                    </div>
+                    <div class="w-full flex flex-col gap-1">
+                        <span class="text-xs capitalize">région</span>
+                        <span class="text-sm font-medium capitalize">est</span>
+                    </div>
+                    <div class="w-full flex flex-col gap-1">
+                        <span class="text-xs capitalize">ville</span>
+                        <span class="text-sm font-medium capitalize">constantine</span>
+                    </div>
+                    </div>
+                </div>
+                <!--end user info-->
+
+                
+                <label for="my-modal" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
+                    <i class="uil uil-signout text-primary text-xl"></i>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <!--end nav bar-->
+    <!--main-->
+  <div class="w-full h-full overflow-auto gap-4">
+    <div class="w-full h-full flex flex-col gap-4">
+        <div class="w-full h-full bg-white rounded-xl flex flex-col gap-4 p-4">
+    
+            <div class="w-full flex justify-between items-center">
+              <nav class="flex" aria-label="Breadcrumb">
+                <ol role="list" class="flex items-center space-x-4">
+                  <li>
+                    <div>
+                      <a href="index.html" class="text-gray-400 hover:text-gray-500">
+                        <!-- Heroicon name: solid/home -->
+                        <svg class="flex-shrink-0 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        <span class="sr-only">Home</span>
+                      </a>
+                    </div>
+                  </li>
+              
+                  <li>
+                    <div class="flex items-center">
+                      <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                      </svg>
+                      <a href="créance.html" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700 capitalize">Bon de commandes</a>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="flex items-center">
+                      <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                      </svg>
+                      <a href="créance.html" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700 capitalize">BC5540</a>
+                    </div>
+                  </li>
+                </ol>
+              </nav>
+              
+              <div class="flex gap-2 items-center">
+                <div class="form-control">
+                    <div class="input-group">
+                      <input type="text" placeholder="Search…" class="input input-bordered" />
+                      <button class="btn btn-square bg-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                      </button>
+                    </div>
+                  </div>
+                <div class="dropdown dropdown-end">
+                          <label tabindex="0" class="btn capitalize bg-white px-4 py-2 border border-slate-300 text-gray-400 text-sm hover:bg-slate-50 hover:border-slate-400  m-1">filtres</label>
+                          <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-lg w-52 text-xs text-gray-500">
+                            <li><a>livré</a></li>
+                            <li><a>en cours de livraison</a></li>
+                            <li><a>en attente de validation</a></li>
+                            <li><a>refusé</a></li>
+                          </ul>
+                </div>
+                
+              </div>
+                        <!-- This example requires Tailwind CSS v2.0+ -->
+                        
+              
+            </div>
+            <div class="grow overflow-x-hidden relative flex flex-col overflow-auto">
+              <div class="flex-none">
+                <div class="w-full h-10 sticky inset-0 grid grid-cols-1 lg:grid-cols-6 rounded-t-md bg-gray-200 text-gray-500 text-xs font-medium px-4">
+                  <div class="h-full flex items-center">
+                    <span>Bon de commande</span>
+                  </div>
+                  <div class="h-full hidden lg:flex items-center">
+                    <span>Montant</span>
+                  </div>
+                  <div class="h-full hidden lg:flex items-center">
+                    <span>reste</span>
+                  </div>
+                  <div class="h-full hidden lg:flex items-center">
+                    <span>Date de facturation</span>
+                  </div>
+                  <div class="h-full hidden lg:flex items-center">
+                    <span>Date d'echéance</span>
+                  </div>
+                  <div class="h-full hidden lg:flex items-center capitalize">
+                    <span>etat</span>
+                  </div>
+                </div>
+              </div>
+                
+              
+                <div class="w-full grow overflow-auto rounded-b-md bg-gray-50">
+                  <div class="w-full h-full flex flex-col gap-2 p-2">
+                    <!--table item-->
+                    <div class="w-full py-3 bg-white rounded-md flex-none">
+                      <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-4 text-xs text-gray-500 px-2">
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                          <span class="lg:hidden">Bon de commande</span>
+                          <span class="font-medium">BC5540</span>
+                        </div>
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                          <span class="lg:hidden">créances globale</span>
+                          <span>20 000 000.00 dzd</span>
+                        </div>
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">reste</span>
+                            <span>10 000 000.00 dzd</span>
+                          </div>
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                          <span class="lg:hidden">créances échues</span>
+                          <span>20-12-2022</span>
+                        </div>
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">créances échues</span>
+                            <span>20-12-2022</span>
+                          </div>
+                        <div class="w-full flex justify-between items-center">
+                          <span class="bg-green-200 px-3 py-1 rounded-md text-green-600 capitalize">
+                            livrée</span>
+                            <a href="bonDeLivraison.html">
+                                <i class="uil uil-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                    <!--table item end-->
+
+                     <!--table item-->
+                     <div class="w-full py-3 bg-white rounded-md flex-none">
+                        <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-4 text-xs text-gray-500 px-2">
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">Bon de commande</span>
+                            <span class="font-medium">BC2140</span>
+                          </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">créances globale</span>
+                            <span>80 000 000.00 dzd</span>
+                          </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                              <span class="lg:hidden">reste</span>
+                              <span>14 000 000.00 dzd</span>
+                            </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">créances de facturation</span>
+                            <span>10-04-2022</span>
+                          </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">créances échues</span>
+                            <span>118-12-2022</span>
+                          </div>
+                          <div class="w-full flex justify-between items-center"> 
+                            <span class="bg-red-200 px-3 py-1 rounded-md text-red-600 capitalize">
+                              refusé</span>
+                              <a href="bonDeLivraison.html">
+                                <i class="uil uil-ellipsis-v"></i>
+                              </a>
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
+                      <!--table item end-->
+
+                                           <!--table item-->
+                     <div class="w-full py-3 bg-white rounded-md flex-none">
+                        <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-4 text-xs text-gray-500 px-2">
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">Bon de commande</span>
+                            <span class="font-medium">BC1160</span>
+                          </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">créances globale</span>
+                            <span>80 000 000.00 dzd</span>
+                          </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                              <span class="lg:hidden">reste</span>
+                              <span>14 000 000.00 dzd</span>
+                            </div>
+                            <div class="h-full flex flex-col gap-3 justify-center">
+                                <span class="lg:hidden">date facturation</span>
+                                <span>10-04-12022</span>
+                              </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">créances échues</span>
+                            <span>10-04-12022</span>
+                          </div>
+                          <div class="w-full flex justify-between items-center">
+                            <span class="bg-blue-200 px-3 py-1 rounded-md text-blue-600 capitalize">
+                              en cours de livraison</span>
+                              <a href="bonDeLivraison.html">
+                                <i class="uil uil-ellipsis-v"></i>
+                              </a>
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
+                      <!--table item end-->
+
+                      
+                                           <!--table item-->
+                     <div class="w-full py-3 bg-white rounded-md flex-none">
+                        <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-4 text-xs text-gray-500 px-2">
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">Bon de commande</span>
+                            <span class="font-medium">BC1160</span>
+                          </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">créances globale</span>
+                            <span>80 000 000.00 dzd</span>
+                          </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                              <span class="lg:hidden">reste</span>
+                              <span>14 000 000.00 dzd</span>
+                            </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">créances échues</span>
+                            <span>10-04-2022</span>
+                          </div>
+                          <div class="h-full flex flex-col gap-3 justify-center">
+                            <span class="lg:hidden">créances échues</span>
+                            <span>10-04-2022</span>
+                          </div>
+                          <div class="w-full flex justify-between items-center"> 
+                            <span class="bg-amber-200 px-3 py-1 rounded-md text-amber-600 capitalize">
+                              en attente de validation</span>
+                              <a href="bonDeLivraison.html">
+                                <i class="uil uil-ellipsis-v"></i>
+                              </a>
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
+                      <!--table item end-->
+                    
+                  </div>
+                </div>
+                
+                
+                
+              </div>
+
+
+
+              <div class="w-full flex justify-between">
+
+                <!--bottom bar-->
+                <div class="py-3 bg-white border border-slate-300 hidden lg:flex items-center justify-center gap-4 text-gray-400 rounded-lg px-6">
+                    <span>total : <span class="font-semibold">100 000 000.00 <span class="uppercase text-xs">dzd</span></span> 
+                    </span>
+    
+                    <span>|</span>
+    
+                    <span>reste : <span class="font-semibold">100 000 000.00 <span class="uppercase text-xs">dzd</span></span> 
+                    </span>
+                  </div>
+              <!--end bottom bar-->
+
+              <label for="add-bc-drawer" class="btn btn-primary drawer-button text-white capitalize">ajouter</label>
+              </div>
+              
+        </div>
+
+      </div>
+      
+    </div>
+
+            </div>
+        </div> 
+
+        <!--ajouter bon de commande-->
+        <div class="drawer-side">
+          <label for="add-bc-drawer" class="drawer-overlay"></label>
+          <div class="w-[500px] h-screen bg-base-100 p-8 text-gray-500">
+            <!-- Sidebar content here -->
+            <div class="w-full h-full flex flex-col relative gap-2">
+                <div class="w-full flex items-center justify-between py-3 px-1 bg-white">
+                    <span class="text-gray-500 text-sm font-medium">Ajouter bon de commande</span>
+    
+                    <label  for="add-bc-drawer" class="w-6 h-6 flex items-center justify-center rounded-md bg-slate-200 drawer-overlay cursor-pointer hover:bg-slate-300">
+                        <i class="uil uil-times"></i>
+                    </label>
+                </div>
+    
+                <div class="w-full grow overflow-auto px-1">
+                    <div class="w-full flex flex-col h-fit gap-4 text-gray-500">
+                        <div class="w-full flex flex-col gap-2">
+                            <span class="text-xs font-medium">Désignation</span>
+                            <input type="text" class="input input-bordered input-secondary w-full text-sm" />
+                        </div>
+                        <div class="w-full flex flex-col gap-2">
+                            <span class="text-xs font-medium">Numéro</span>
+                            <input type="number" class="input input-bordered input-secondary w-full" />
+                        </div>
+    
+                        <div class="w-full flex flex-col gap-2">
+                            <span class="text-xs font-medium">Ville</span>
+                            <select type="number" class="input input-bordered input-secondary w-full">
+                                <option value="sba">Sidi Bel Abbes</option>
+                                </select>
+                        </div>
+    
+                        <div class="form-control">
+                            <label class="label cursor-pointer">
+                             <input type="checkbox" checked="checked" class="checkbox checkbox-sm checkbox-primary" />
+                              <span class="label-text w-full ml-4">Active</span> 
+                              
+                            </label>
+                          </div>
+    
+                          <div class="w-full flex flex-col gap-2">
+                            <span class="text-xs font-medium">NIF</span>
+                            <input type="number" class="input input-bordered input-secondary w-full" />
+                        </div>
+    
+                        <div class="w-full flex flex-col gap-2">
+                            <span class="text-xs font-medium">NIS</span>
+                            <input type="number" class="input input-bordered input-secondary w-full" />
+                        </div>
+    
+                        <div class="w-full flex flex-col gap-2">
+                            <span class="text-xs font-medium">ART</span>
+                            <input type="number" class="input input-bordered input-secondary w-full" />
+                        </div>
+    
+                        <div class="w-full flex flex-col gap-2">
+                            <span class="text-xs font-medium">RC</span>
+                            <input type="number" class="input input-bordered input-secondary w-full" />
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="w-full flex items-center gap-3 justify-end py-3 px-1 bg-white">
+                    <label  for="add-bc-drawer" class="btn text-xs text-white capitalize border-0  flex items-center justify-center rounded-md bg-primary drawer-overlay cursor-pointer hover:bg-slate-300">
+                        Ajouter
+                    </label>
+                    <label  for="add-bc-drawer" class="btn text-xs text-gray-500 border-0 capitalize flex items-center justify-center rounded-md bg-slate-200 drawer-overlay cursor-pointer hover:bg-slate-300">
+                        Annuler
+                    </label>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!--end ajouter bon de commandes-->
+      </div>
+
+
+      <!--sign out modal-->
+      <input type="checkbox" id="my-modal" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box">
+          <p class="py-4">Voulez-vous vraiment se déconnecter !</p>
+          <div class="modal-action">
+            <label for="my-modal" class="btn text-white">rester</label>
+            <label for="my-modal" class="btn bg-white border-none hover:bg-slate-200 text-primary">déconnecter</label>
+          </div>
+        </div>
+      </div>
+      <!--end sign out modal-->
+</body>
+</html>
