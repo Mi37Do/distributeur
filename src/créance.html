@@ -18,14 +18,14 @@
                                 <a href="index.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 tooltip tooltip-right" data-tip="dashboard">
                                     <i class="uil uil-apps text-slate-300 text-xl"></i>
                                 </a>
-                                <a href="créance.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="créances">
-                                    <i class="uil uil-money-stack text-primary text-xl"></i>
+                                <a href="bonDeCommandes.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="commandes">
+                                    <i class="uil uil-file-alt text-slate-300 text-xl"></i>
                                 </a>
                                 <a href="factures.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="factures">
                                     <i class="uil uil-folder text-slate-300 text-xl"></i>
                                 </a>
-                                <a href="bonDeCommandes.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="commandes">
-                                    <i class="uil uil-file-alt text-slate-300 text-xl"></i>
+                                <a href="créance.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="créances">
+                                    <i class="uil uil-money-stack text-primary text-xl"></i>
                                 </a>
                             </div>
                             <div class="w-full hidden lg:flex flex-col gap-4">
@@ -77,7 +77,12 @@
                                     </div>
                                 </div>
                                 <!--end user info-->
-                
+                                <!--user setting-->
+                                    <a href="autre.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="commandes">
+                                      <i class="uil uil-setting text-primary text-xl"></i>
+                                    </a>
+                                    <!--end setting-->
+
                                 
                                 <label for="my-modal" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
                                     <i class="uil uil-signout text-primary text-xl"></i>
@@ -123,13 +128,14 @@
                 <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-lg w-52 text-xs text-gray-500">
                   <li><a>Créances globale</a></li>
                   <li><a>Créances échues</a></li>
+                  <li><a>date d'echéances'</a></li>
                 </ul>
               </div>
         </div>
 
         <div class="grow  overflow-x-hidden relative flex flex-col overflow-auto">
             <div class="flex-none">
-              <div class="w-full h-10 sticky inset-0 grid grid-cols-1 lg:grid-cols-4 rounded-t-md bg-gray-200 text-gray-500 text-xs font-medium">
+              <div class="w-full h-10 sticky inset-0 grid grid-cols-1 lg:grid-cols-6 rounded-t-md bg-gray-200 text-gray-500 text-xs font-medium">
                 <div class="h-full flex items-center px-4">
                   <span>Payeur</span>
                 </div>
@@ -142,14 +148,20 @@
                 <div class="h-full hidden lg:flex items-center px-4">
                   <span>Créances échues</span>
                 </div>
+                <div class="h-full hidden lg:flex items-center px-4">
+                  <span>Mois courant</span>
+                </div>
+                <div class="h-full hidden lg:flex items-center px-4">
+                  
+                </div>
               </div>
             </div>
               <div class="w-full grow overflow-auto rounded-b-md bg-gray-50">
                 <div class="w-full h-full flex flex-col gap-2 p-2">
                   <!--table item-->
                   <div class="w-full py-3 bg-white rounded-md flex-none">
-                    <div class="w-full h-full hidden lg:grid grid-cols-4 text-xs text-gray-500">
-                      <div class="h-full flex items-center px-2">
+                    <div class="w-full h-full  grid grid-cols-1 lg:grid-cols-6 text-xs text-gray-500">
+                      <div class="h-full flex items-center px-2 col-span-1">
                         <span>Djilali attou</span>
                       </div>
                       <div class="h-full flex items-center px-4">
@@ -158,8 +170,47 @@
                       <div class="h-full flex items-center px-4">
                         <span>1000 0000 00.00 dzd</span>
                       </div>
+                      <div class="h-full flex items-center px-4">
+                        <span>40 000 00.00 dzd</span>
+                      </div>
+                      <div class="h-full flex items-center px-4">
+                       <span>1000 0000 00.00 dzd</span> 
+                      </div>
+                      
                       <div class="h-full w-full justify-between flex items-center px-4">
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                          <span class="bg-red-200 px-3 py-1 rounded-md text-red-600">échue</span>
+                        </div> 
+                        <a href="payeur.html">
+                            <i class="uil uil-ellipsis-v"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!--table item end-->
+                  <!--table item-->
+                  <div class="w-full py-3 bg-white rounded-md flex-none">
+                    <div class="w-full h-full  grid grid-cols-1 lg:grid-cols-6 text-xs text-gray-500">
+                      <div class="h-full flex items-center px-2 col-span-1">
+                        <span>Djamal eddine frito</span>
+                      </div>
+                      <div class="h-full flex items-center px-4">
+                        <span>12</span>
+                      </div>
+                      <div class="h-full flex items-center px-4">
                         <span>1000 0000 00.00 dzd</span>
+                      </div>
+                      <div class="h-full flex items-center px-4">
+                        <span>40 000 00.00 dzd</span>
+                      </div>
+                      <div class="h-full flex items-center px-4">
+                       <span>1000 0000 00.00 dzd</span> 
+                      </div>
+                      
+                      <div class="h-full w-full justify-between flex items-center px-4">
+                        <div class="h-full flex flex-col gap-3 justify-center">
+                          <span class="bg-red-200 px-3 py-1 rounded-md text-red-600 hidden">échue</span>
+                        </div> 
                         <a href="payeur.html">
                             <i class="uil uil-ellipsis-v"></i>
                         </a>

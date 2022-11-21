@@ -8,11 +8,8 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body class="bg-slate-200">
-    <div class="drawer">
-        <input id="add-bc-drawer" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content">
-
-
+    <div>
+        <div>
             <div class="w-full h-screen  p-4 flex flex-col-reverse lg:flex-row gap-4 relative">
                     <!--nav bar-->
     <nav class="w-full h-20 lg:w-20 lg:h-full bg-white sticky bottom-0 flex-none rounded-xl p-4 z-10">
@@ -23,14 +20,14 @@
                 <a href="index.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 tooltip tooltip-right" data-tip="dashboard">
                     <i class="uil uil-apps text-slate-300 text-xl"></i>
                 </a>
-                <a href="créance.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="créances">
-                    <i class="uil uil-money-stack text-slate-300 text-xl"></i>
+                <a href="bonDeCommandes.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="commandes">
+                    <i class="uil uil-file-alt text-primary text-xl"></i>
                 </a>
                 <a href="factures.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="factures">
                     <i class="uil uil-folder text-slate-300 text-xl"></i>
                 </a>
-                <a href="bonDeCommandes.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="commandes">
-                    <i class="uil uil-file-alt text-primary text-xl"></i>
+                <a href="créance.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="créances">
+                    <i class="uil uil-money-stack text-slate-300 text-xl"></i>
                 </a>
             </div>
             <div class="w-full hidden lg:flex flex-col gap-4">
@@ -82,7 +79,11 @@
                     </div>
                 </div>
                 <!--end user info-->
-
+                <!--user setting-->
+                <a href="autre.html" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-primary tooltip tooltip-right" data-tip="commandes">
+                  <i class="uil uil-setting text-primary text-xl"></i>
+                </a>
+                <!--end setting-->
                 
                 <label for="my-modal" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
                     <i class="uil uil-signout text-primary text-xl"></i>
@@ -116,7 +117,7 @@
                       <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                         <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                       </svg>
-                      <a href="créance.html" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700 capitalize">Bon de commandes</a>
+                      <a href="bonDeCommandes.html" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700 capitalize">Bon de commandes</a>
                     </div>
                   </li>
 
@@ -125,7 +126,7 @@
                       <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                         <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
                       </svg>
-                      <a href="créance.html" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700 capitalize">BC5540</a>
+                      <a href="créance.html" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700 capitalize">BL5540</a>
                     </div>
                   </li>
                 </ol>
@@ -147,6 +148,10 @@
                             <li><a>en cours de livraison</a></li>
                             <li><a>en attente de validation</a></li>
                             <li><a>refusé</a></li>
+                            <li><label for="DateDeFacturationModal">
+                              date de facturation
+                            </label></li>
+                            <li><a>date d'echéance</a></li>
                           </ul>
                 </div>
                 
@@ -187,7 +192,7 @@
                       <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-4 text-xs text-gray-500 px-2">
                         <div class="h-full flex flex-col gap-3 justify-center">
                           <span class="lg:hidden">Bon de commande</span>
-                          <span class="font-medium">BC5540</span>
+                          <span class="font-medium">BL5540</span>
                         </div>
                         <div class="h-full flex flex-col gap-3 justify-center">
                           <span class="lg:hidden">créances globale</span>
@@ -208,9 +213,9 @@
                         <div class="w-full flex justify-between items-center">
                           <span class="bg-green-200 px-3 py-1 rounded-md text-green-600 capitalize">
                             livrée</span>
-                            <a href="bonDeLivraison.html">
-                                <i class="uil uil-ellipsis-v"></i>
-                            </a>
+                            <label for="BLModal" class="cursor-pointer">
+                              <i class="uil uil-ellipsis-v"></i>
+                            </label>
                         </div>
                         
                       </div>
@@ -223,7 +228,7 @@
                         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-4 text-xs text-gray-500 px-2">
                           <div class="h-full flex flex-col gap-3 justify-center">
                             <span class="lg:hidden">Bon de commande</span>
-                            <span class="font-medium">BC2140</span>
+                            <span class="font-medium">BL2140</span>
                           </div>
                           <div class="h-full flex flex-col gap-3 justify-center">
                             <span class="lg:hidden">créances globale</span>
@@ -244,9 +249,9 @@
                           <div class="w-full flex justify-between items-center"> 
                             <span class="bg-red-200 px-3 py-1 rounded-md text-red-600 capitalize">
                               refusé</span>
-                              <a href="bonDeLivraison.html">
+                              <label for="BLModal" class="cursor-pointer">
                                 <i class="uil uil-ellipsis-v"></i>
-                              </a>
+                              </label>
                           </div>
                           
                         </div>
@@ -259,7 +264,7 @@
                         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-4 text-xs text-gray-500 px-2">
                           <div class="h-full flex flex-col gap-3 justify-center">
                             <span class="lg:hidden">Bon de commande</span>
-                            <span class="font-medium">BC1160</span>
+                            <span class="font-medium">BL1160</span>
                           </div>
                           <div class="h-full flex flex-col gap-3 justify-center">
                             <span class="lg:hidden">créances globale</span>
@@ -280,9 +285,9 @@
                           <div class="w-full flex justify-between items-center">
                             <span class="bg-blue-200 px-3 py-1 rounded-md text-blue-600 capitalize">
                               en cours de livraison</span>
-                              <a href="bonDeLivraison.html">
+                              <label for="BLModal" class="cursor-pointer">
                                 <i class="uil uil-ellipsis-v"></i>
-                              </a>
+                              </label>
                           </div>
                           
                         </div>
@@ -296,7 +301,7 @@
                         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-4 text-xs text-gray-500 px-2">
                           <div class="h-full flex flex-col gap-3 justify-center">
                             <span class="lg:hidden">Bon de commande</span>
-                            <span class="font-medium">BC1160</span>
+                            <span class="font-medium">BL1400</span>
                           </div>
                           <div class="h-full flex flex-col gap-3 justify-center">
                             <span class="lg:hidden">créances globale</span>
@@ -317,9 +322,10 @@
                           <div class="w-full flex justify-between items-center"> 
                             <span class="bg-amber-200 px-3 py-1 rounded-md text-amber-600 capitalize">
                               en attente de validation</span>
-                              <a href="bonDeLivraison.html">
+                              <label for="BLModal" class="cursor-pointer">
                                 <i class="uil uil-ellipsis-v"></i>
-                              </a>
+                              </label>
+                              
                           </div>
                           
                         </div>
@@ -335,11 +341,8 @@
               </div>
 
 
-
-              <div class="w-full flex justify-between">
-
                 <!--bottom bar-->
-                <div class="py-3 bg-white border border-slate-300 hidden lg:flex items-center justify-center gap-4 text-gray-400 rounded-lg px-6">
+                <div class="w-fit py-3 bg-white border border-slate-300 hidden lg:flex items-center justify-center gap-4 text-gray-400 rounded-lg px-6">
                     <span>total : <span class="font-semibold">100 000 000.00 <span class="uppercase text-xs">dzd</span></span> 
                     </span>
     
@@ -350,8 +353,6 @@
                   </div>
               <!--end bottom bar-->
 
-              <label for="add-bc-drawer" class="btn btn-primary drawer-button text-white capitalize">ajouter</label>
-              </div>
               
         </div>
 
@@ -361,83 +362,6 @@
 
             </div>
         </div> 
-
-        <!--ajouter bon de commande-->
-        <div class="drawer-side">
-          <label for="add-bc-drawer" class="drawer-overlay"></label>
-          <div class="w-[500px] h-screen bg-base-100 p-8 text-gray-500">
-            <!-- Sidebar content here -->
-            <div class="w-full h-full flex flex-col relative gap-2">
-                <div class="w-full flex items-center justify-between py-3 px-1 bg-white">
-                    <span class="text-gray-500 text-sm font-medium">Ajouter bon de commande</span>
-    
-                    <label  for="add-bc-drawer" class="w-6 h-6 flex items-center justify-center rounded-md bg-slate-200 drawer-overlay cursor-pointer hover:bg-slate-300">
-                        <i class="uil uil-times"></i>
-                    </label>
-                </div>
-    
-                <div class="w-full grow overflow-auto px-1">
-                    <div class="w-full flex flex-col h-fit gap-4 text-gray-500">
-                        <div class="w-full flex flex-col gap-2">
-                            <span class="text-xs font-medium">Désignation</span>
-                            <input type="text" class="input input-bordered input-secondary w-full text-sm" />
-                        </div>
-                        <div class="w-full flex flex-col gap-2">
-                            <span class="text-xs font-medium">Numéro</span>
-                            <input type="number" class="input input-bordered input-secondary w-full" />
-                        </div>
-    
-                        <div class="w-full flex flex-col gap-2">
-                            <span class="text-xs font-medium">Ville</span>
-                            <select type="number" class="input input-bordered input-secondary w-full">
-                                <option value="sba">Sidi Bel Abbes</option>
-                                </select>
-                        </div>
-    
-                        <div class="form-control">
-                            <label class="label cursor-pointer">
-                             <input type="checkbox" checked="checked" class="checkbox checkbox-sm checkbox-primary" />
-                              <span class="label-text w-full ml-4">Active</span> 
-                              
-                            </label>
-                          </div>
-    
-                          <div class="w-full flex flex-col gap-2">
-                            <span class="text-xs font-medium">NIF</span>
-                            <input type="number" class="input input-bordered input-secondary w-full" />
-                        </div>
-    
-                        <div class="w-full flex flex-col gap-2">
-                            <span class="text-xs font-medium">NIS</span>
-                            <input type="number" class="input input-bordered input-secondary w-full" />
-                        </div>
-    
-                        <div class="w-full flex flex-col gap-2">
-                            <span class="text-xs font-medium">ART</span>
-                            <input type="number" class="input input-bordered input-secondary w-full" />
-                        </div>
-    
-                        <div class="w-full flex flex-col gap-2">
-                            <span class="text-xs font-medium">RC</span>
-                            <input type="number" class="input input-bordered input-secondary w-full" />
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="w-full flex items-center gap-3 justify-end py-3 px-1 bg-white">
-                    <label  for="add-bc-drawer" class="btn text-xs text-white capitalize border-0  flex items-center justify-center rounded-md bg-primary drawer-overlay cursor-pointer hover:bg-slate-300">
-                        Ajouter
-                    </label>
-                    <label  for="add-bc-drawer" class="btn text-xs text-gray-500 border-0 capitalize flex items-center justify-center rounded-md bg-slate-200 drawer-overlay cursor-pointer hover:bg-slate-300">
-                        Annuler
-                    </label>
-                </div>
-            </div>
-            
-          </div>
-        </div>
-
-        <!--end ajouter bon de commandes-->
       </div>
 
 
@@ -453,5 +377,32 @@
         </div>
       </div>
       <!--end sign out modal-->
+
+      <!--BL modal-->
+      <input type="checkbox" id="BLModal" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">BL1400</h3>
+          <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+          <div class="modal-action">
+            <label for="BLModal" class="btn btn-square text-white"><i class="uil uil-arrow-right text-xl"></i></label>
+          </div>
+        </div>
+      </div>
+      <!--end BL modal-->
+
+      <!--days filter modal date de facturation-->
+      <input type="checkbox" id="DateDeFacturationModal" class="modal-toggle" />
+      <div class="modal w-2/3">
+        <div class="modal-box  w-11/12 max-w-5xl">
+          <h3 class="font-semibold text-lg">Date de facturation</h3>
+          
+          <div class="modal-action">
+            <label for="DateDeFacturationModal" class="btn btn-primary text-white capitalize">filter</label>
+            <label for="DateDeFacturationModal" class="btn bg-white text-gray-500 hover:bg-slate-200 border-none capitalize">annuler</label>
+          </div>
+        </div>
+      </div>
+      <!--days filter modal date de facturation-->
 </body>
 </html>
