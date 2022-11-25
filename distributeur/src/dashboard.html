@@ -1,0 +1,337 @@
+<!doctype html>
+<html data-theme="corporate">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.41.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="w-full h-screen bg-slate-200 p-4 flex flex-col-reverse lg:flex-row gap-4 relative">
+
+    <!--nav bar-->
+  <nav class="w-full h-20 lg:w-20 lg:h-full bg-white sticky bottom-0 flex-none rounded-xl p-4">
+    <div class="w-full h-full flex flex-col gap-8">
+
+
+        <div class="w-full h-full flex flex-col items-center justify-center gap-4">
+            <a href="index.html" class="btn btn-square bg-white hover:bg-slate-100 border-none flex items-center justify-center p-1 tooltip tooltip-right" data-tip="dashboard">
+                <i class="uil uil-apps text-blue-300 text-xl"></i>
+            </a>
+            <a href="bonDeCommandes.html" class="btn btn-square bg-white hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-blue-300 tooltip tooltip-right" data-tip="commandes">
+              <i class="uil uil-file-alt text-slate-700 text-xl"></i>
+            </a>
+            <a href="factures.html" class="btn btn-square bg-white hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-blue-300 tooltip tooltip-right" data-tip="factures">
+                <i class="uil uil-folder text-slate-700 text-xl"></i>
+            </a>
+            <a href="créance.html" class="btn btn-square bg-white hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-blue-300 tooltip tooltip-right" data-tip="créances">
+              <i class="uil uil-money-stack text-slate-700 text-xl"></i>
+          </a>
+        </div>
+        <div class="w-full hidden lg:flex flex-col gap-4">
+                                
+          <!--begin notifications-->
+          <div class="dropdown dropdown-right dropdown-end">
+            <label tabindex="0" class="btn btn-square bg-[#141b54] hover:bg-blue-900 border-none mr-1 flex items-center justify-center p-1 relative">
+                <div class="badge badge-xs bg-red-400 absolute rounded-full right-2 top-2 border-white"></div>
+                <i class="uil uil-bell text-primary text-xl"></i>
+            </label>
+            <div tabindex="0" class="dropdown-content menu p-2 shadow bg-slate-800 rounded-box w-64 h-96 ml-2 overflow-auto">
+                <li><div class="w-full flex justify-between">
+                    <div class="w-full flex flex-col gap-1">
+                        <span class="capitalize text-xs text-gray-200">facture</span>
+                        <span class="capitalize text-sm font-medium text-gray-200">f0148</span>
+                    </div> 
+                    
+                    <span class="w-3 h-3 rounded-full bg-red-400 flex-none"></span></div></li>
+
+
+            <li><div class="w-full flex justify-between">
+                    <div class="w-full flex flex-col gap-1">
+                        <span class="capitalize text-xs text-gray-200">bon de commande</span>
+                        <span class="capitalize text-sm font-medium text-gray-200">BC22458</span>
+                    </div> 
+                    
+                    <span class="w-3 h-3 rounded-full bg-green-300 flex-none"></span></div></li>
+            </div>
+        </div>
+        <!--end notifications-->
+          <!--begin user info -->
+          <div class="dropdown dropdown-right dropdown-end">
+              <label tabindex="0" class="btn btn-square bg-white hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
+                  <i class="uil uil-user text-blue-300 text-xl"></i>
+              </label>
+              <div tabindex="0" class="dropdown-content p-4 shadow bg-white rounded-box w-64 ml-2 flex flex-col gap-3 text-slate-300">
+              <div class="w-full flex flex-col gap-1">
+                  <span class="text-xs capitalize">Distributeur</span>
+                  <span class="text-sm font-medium capitalize">ben kada fouad</span>
+              </div>
+              <div class="w-full flex flex-col gap-1">
+                  <span class="text-xs capitalize">région</span>
+                  <span class="text-sm font-medium capitalize">est</span>
+              </div>
+              <div class="w-full flex flex-col gap-1">
+                  <span class="text-xs capitalize">ville</span>
+                  <span class="text-sm font-medium capitalize">constantine</span>
+              </div>
+              </div>
+          </div>
+          <!--end user info-->
+
+          <!--user setting-->
+          <a href="autre.html" class="btn btn-square bg-white hover:bg-slate-100 border-none flex items-center justify-center p-1 hover:text-blue-300 tooltip tooltip-right" data-tip="commandes">
+            <i class="uil uil-setting text-blue-300 text-xl"></i>
+          </a>
+          <!--end setting-->
+          
+          <label for="my-modal" class="btn btn-square bg-white hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1">
+              <i class="uil uil-signout text-blue-300 text-xl"></i>
+          </label>
+      </div>
+    </div>
+  </nav>
+
+  <!--main-->
+  <div class="w-full h-full overflow-hidden grid grid-cols-8 gap-4">
+    <div class="w-full h-full col-span-3 flex flex-col gap-2">
+        <span class="capitalize text-sm font-medium">ventes</span>
+        <div class="w-full h-full bg-white p-6 grid grid-rows-6 gap-3">
+
+            <!--vente annuelle et mensuelle-->
+            <div class="w-full flex row-span-1 gap-5">
+                <div class="w-full flex flex-col gap-1">
+                <span class="text-sm">objectif année</span>
+                <p class="text-4xl font-bold">80%</p>
+                </div>
+                <div class="w-full flex flex-col gap-4">
+                <div class="w-full flex justify-between items-center">
+                    <span class="text-sm">vente annuelles</span>
+                    <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                </div>
+                <span class="text-xl font-bold">100 000 000.00 DA</span>
+            </div>            
+        </div>
+
+        <div class="w-full flex row-span-1 gap-5">
+            <div class="w-full flex flex-col gap-1">
+            <span class="text-sm">objectif mensuelle</span>
+            <p class="text-4xl font-bold">-11%</p>
+            </div>
+            <div class="w-full flex flex-col gap-4">
+            <div class="w-full flex justify-between items-center">
+                <span class="text-sm">vente mensuelle</span>
+                <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+            </div>
+            <span class="text-xl font-bold">20 000 000.00 DA</span>
+        </div>            
+    </div>
+
+            <div class="w-full flex row-span-1 gap-8">
+                <div class="w-full flex  flex-col gap-4">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">ristourne alloué</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-xl font-bold">100 000 000.00 DA</span>
+                </div>
+
+                <div class="w-full flex flex-col gap-4">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">ristourne non-alloué</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-xl font-bold">100 000 000.00 DA</span>
+                </div>
+            </div>
+
+            <div class="w-full row-span-3 flex items-start">
+                <canvas id="line-chart" width="100"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="w-full h-full col-span-3 flex flex-col gap-2">
+        <span class="capitalize text-sm font-medium">créances</span>
+        <div class="w-full grow bg-white p-6 grid grid-rows-6 gap-3">
+            <div class="w-full flex row-span-1 gap-5">
+                <div class="w-full flex  flex-col gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">délais de payement</span>
+                    </div>
+                    <span class="text-xl font-bold">11-12-2022</span>
+                </div>
+
+                <div class="w-full flex  flex-col gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">plafonnement</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-xl font-bold">80 000 000.00 DA</span>
+                </div>
+            </div>
+
+            <div class="w-full flex row-span-1 gap-5">
+                <div class="w-full flex flex-col gap-2">
+                    <span class="text-sm">taux de créances</span>
+                    <p class="text-4xl font-bold">80%</p>
+                    </div>
+
+                <div class="w-full flex  flex-col gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">créances total</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-xl font-bold">80 000 000.00 DA</span>
+                </div>
+            </div>
+
+            <div class="w-full flex row-span-1 gap-5">
+                <div class="w-full flex flex-col gap-2">
+                    <span class="text-sm">taux des en cours</span>
+                    <p class="text-4xl font-bold">20%</p>
+                    </div>
+
+                <div class="w-full flex  flex-col gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">en cours total</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-xl font-bold">80M.00 DA</span>
+                </div>
+            </div>
+
+            <div class="w-full row-span-3">
+                <canvas id="bar-chart-grouped" height="100"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full h-full col-span-2 grid grid-rows-7 gap-2">
+        <div class="w-full h-full row-span-3 flex flex-col gap-2">
+            <span class="capitalize text-sm font-medium">commandes</span>
+            <div class="w-full grow bg-white p-6 grid grid-rows-4">
+
+                <div class="w-full h-full flex  flex-col justify-center gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">receptions et enregistrement</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-xl font-bold">40</span>
+                </div>
+
+                <div class="w-full h-full flex  flex-col justify-center gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">validation et traitement</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-xl font-bold">10</span>
+                </div>
+
+                <div class="w-full h-full flex  flex-col justify-center gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">preparation</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-xl font-bold">12</span>
+                </div>
+
+                <div class="w-full h-full flex  flex-col justify-center gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span class="text-sm">en cours d'expedition</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-xl font-bold">04</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-full row-span-2 flex flex-col gap-2">
+            <span class="capitalize text-sm font-medium">top commandés</span>
+            <div class="w-full grow bg-white rounded-xl p-6">
+                <canvas id="pie-chart" height="100"></canvas>
+            </div>
+        </div>
+
+        <div class="w-full h-full row-span-2 flex flex-col gap-2">
+            <span class="capitalize text-sm font-medium">reclamations et intervention</span>
+            <div class="w-full grow bg-white rounded-xl p-6 grid grid-rows-2">
+
+                <div class="w-full h-full flex  flex-col justify-center gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span>reclamations non traitées</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-2xl font-bold">12</span>
+                </div>
+
+                <div class="w-full h-full flex  flex-col justify-center gap-3">
+                    <div class="w-full flex justify-between items-center">
+                        <span>intervention non traitées</span>
+                        <a href="#" class="w-6 h-6 bg-slate-300 rounded-lg"></a>
+                    </div>
+                    <span class="text-2xl font-bold">04</span>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+<script>
+
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    datasets: [{ 
+        data: [86,114,106,106,107,111,133,221,783,2478],
+        label: "Africa",
+        borderColor: "#3e95cd",
+        fill: false
+      },
+    ]
+  },
+
+});
+
+new Chart(document.getElementById("bar-chart-grouped"), {
+    type: 'bar',
+    data: {
+      labels: ["1900", "1950", "1999", "2050"],
+      datasets: [
+        {
+          label: "Africa",
+          backgroundColor: "#3e95cd",
+          data: [133,221,783,2478]
+        }, {
+          label: "Europe",
+          backgroundColor: "#8e5ea2",
+          data: [408,547,675,734]
+        }
+      ]
+    },
+});
+
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Africa", "Asia", "Europe"],
+      datasets: [{
+        label: "Population (millions)",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        data: [2478,5267,734,784,433]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+      }
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,14 +1,15 @@
 <!doctype html>
-<html>
+<html data-theme="corporate">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-  <link href="/dist/output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.41.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body class="w-full h-screen bg-slate-200 p-4 flex flex-col-reverse lg:flex-row gap-4 relative">
+<body class="w-full h-screen bg-slate-400 p-4 flex flex-col-reverse lg:flex-row gap-4 relative">
 
     <!--nav bar-->
   <nav class="w-full h-20 lg:w-20 lg:h-full bg-white sticky bottom-0 flex-none rounded-xl p-4">
@@ -34,7 +35,7 @@
           <!--begin notifications-->
           <div class="dropdown dropdown-right dropdown-end">
               <label tabindex="0" class="btn btn-square bg-base-100 hover:bg-slate-100 border-none mr-1 flex items-center justify-center p-1 relative">
-                  <div class="badge badge-xs bg-red-400 absolute right-2 top-2 border-white"></div>
+                  <div class="badge badge-xs bg-red-400 absolute rounded-full right-2 top-2 border-white"></div>
                   <i class="uil uil-bell text-primary text-xl"></i>
               </label>
               <div tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-64 h-96 ml-2 overflow-auto">
